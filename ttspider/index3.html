@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enhanced Glitchy Self Love Animation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      position: relative;
+    }
+
+    /* Kaleidoscopic Background with Hexagonal Frame */
+    .bg-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .bg-gradient {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff, #ff0066);
+      background-size: 400%;
+      animation: bgAnimation 15s ease infinite;
+      filter: blur(80px);
+      opacity: 0.4;
+    }
+
+    @keyframes bgAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .hex-frame {
+      position: absolute;
+      width: 80vmin;
+      height: 80vmin;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      border: 4px solid rgba(255, 165, 0, 0.8);
+      box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
+      animation: hexPulse 5s ease-in-out infinite;
+      z-index: 1;
+      clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    }
+
+    @keyframes hexPulse {
+      0%, 100% { transform: translate(-50%, -50%) rotate(45deg) scale(1); opacity: 0.8; }
+      50% { transform: translate(-50%, -50%) rotate(45deg) scale(1.05); opacity: 1; }
+    }
+
+    /* Particle Effects */
+    .particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      animation: particleMove 10s linear infinite;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .particle:nth-child(2) { top: 20%; left: 10%; animation-delay: -2s; }
+    .particle:nth-child(3) { top: 50%; left: 80%; animation-delay: -4s; }
+    .particle:nth-child(4) { top: 70%; left: 30%; animation-delay: -6s; }
+    .particle:nth-child(5) { top: 10%; left: 60%; animation-delay: -8s; }
+
+    @keyframes particleMove {
+      0% { transform: translate(0, 0); opacity: 1; }
+      100% { transform: translate(100vw, 100vh); opacity: 0; }
+    }
+
+    /* Light Streaks */
+    .light-line {
+      position: absolute;
+      width: 200%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, rgba(255, 0, 255, 0.8), transparent);
+      animation: moveLine 4s linear infinite;
+      z-index: 3;
+      opacity: 0.3;
+    }
+
+    .light-line:nth-child(2) { top: 30%; animation-delay: 1s; }
+    .light-line:nth-child(3) { top: 60%; animation-delay: 2s; }
+
+    @keyframes moveLine {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* Enhanced Text with Glitch and RGB Split */
+    .text-container {
+      position: relative;
+      z-index: 4;
+    }
+
+    .text {
+      font-size: clamp(3rem, 8vw, 6rem);
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold;
+      position: relative;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 0, 255, 0.5);
+      animation: textGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes textGlow {
+      0%, 100% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 0, 255, 0.5); }
+      50% { text-shadow: 0 0 25px rgba(255, 255, 255, 1), 0 0 50px rgba(255, 0, 255, 0.8); }
+    }
+
+    .text::before,
+    .text::after {
+      content: "Self Love";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .text::before {
+      color: #ff00ff;
+      animation: glitch-top 0.5s linear infinite;
+      clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+      z-index: -1;
+    }
+
+    .text::after {
+      color: #00ffff;
+      animation: glitch-bottom 0.7s linear infinite;
+      clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+      z-index: -1;
+    }
+
+    @keyframes glitch-top {
+      0% { transform: translate(0, 0); opacity: 1; }
+      20% { transform: translate(5px, -5px); opacity: 0.8; }
+      40% { transform: translate(-5px, 5px); opacity: 0.6; }
+      60% { transform: translate(10px, -2px) skew(10deg); opacity: 0.9; }
+      80% { transform: translate(-10px, 3px); opacity: 0.7; }
+      100% { transform: translate(0, 0); opacity: 1; }
+    }
+
+    @keyframes glitch-bottom {
+      0% { transform: translate(0, 0); opacity: 1; }
+      20% { transform: translate(-5px, 0); opacity: 0.9; }
+      40% { transform: translate(5px, 2px); opacity: 0.7; }
+      60% { transform: translate(-10px, 5px) skew(-15deg); opacity: 0.8; }
+      80% { transform: translate(10px, -3px); opacity: 0.6; }
+      100% { transform: translate(0, 0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-container">
+    <div class="bg-gradient"></div>
+    <div class="hex-frame"></div>
+  </div>
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  <div class="light-line"></div>
+  <div class="light-line"></div>
+  <div class="light-line"></div>
+  <div class="text-container">
+    <div class="text">Self Love</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #cfd9ff, #ffffff);
+  color: #333;
+  padding: 20px 16px 80px;
+}
+
+.container {
+  max-width: 400px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h2 {
+  font-size: 24px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.trip-form {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 20px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.input-group {
+  margin-bottom: 12px;
+}
+
+.input-group label {
+  font-size: 12px;
+  color: #555;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.input-row {
+  display: flex;
+  gap: 12px;
+}
+
+.input-row .half {
+  flex: 1;
+}
+
+.search-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.saved-trips {
+  margin-top: 24px;
+}
+
+.trips-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.trips-header h3 {
+  font-size: 18px;
+}
+
+.trips-header a {
+  font-size: 14px;
+  color: #555;
+}
+
+.trip-card {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.airline {
+  font-weight: bold;
+  color: green;
+  margin-bottom: 8px;
+}
+
+.trip-times, .trip-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.trip-date {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #666;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+}
+
+.nav-item {
+  width: 24px;
+  height: 24px;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+.nav-item.active {
+  background: black;
+}

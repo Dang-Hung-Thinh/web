@@ -1,0 +1,24 @@
+/* Định kiểu cho trái tim */
+.heart {
+    fill: red; /* Màu của trái tim */
+    position: relative;
+    top: 5px;
+    width: 50px; /* Kích thước ban đầu */
+    animation: pulse 1s ease infinite; /* Áp dụng hiệu ứng pulse */
+}
+
+/* Container chứa trái tim */
+#heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Định nghĩa hiệu ứng pulse */
+@keyframes pulse {
+    0% { transform: scale(1); }   /* Kích thước ban đầu */
+    50% { transform: scale(1.3); } /* Phóng to 1.3 lần ở giữa */
+    100% { transform: scale(1); }  /* Trở lại kích thước ban đầu */
+}

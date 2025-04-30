@@ -1,0 +1,33 @@
+
+            .title{
+                color: rgb(145, 135, 113);
+            }
+            .son{
+                color: rgb(255, 252, 246);
+             
+            }
+            .top{
+                margin:0 30%;
+                text-align: center;
+                background-color: rgb(93, 134, 141);
+                border: 2px dashed bisque;
+            }
+            span{
+                color: brown;
+            }
+            .Devices{
+                display: flex;
+                flex-wrap: wrap;
+                background-color: rgb(228, 240, 240);
+                width: 100%;
+                
+                
+            }
+            .dev_1{
+                flex: 49%;
+                border: 0.5px dashed bisque;
+            }
+            .dev_1 img {
+                        width: 100px; /* Đặt kích thước ảnh cố định để không chiếm quá nhiều không gian */
+                        }
+        

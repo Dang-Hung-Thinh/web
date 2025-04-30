@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Fashion Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+    header {
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    .container {
+      padding: 20px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background: white;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .search-section {
+      margin: 20px 0;
+    }
+    .search-section input,
+    .search-section select,
+    .search-section button {
+      margin-right: 10px;
+      padding: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Fashion Store</h2>
+    <nav>
+      <a href="#" onclick="showHome()">Home</a>
+      <a href="#" onclick="showSearch()">Tìm kiếm</a>
+      <a href="#" onclick="showAdmin()">Admin</a>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <div id="homeSection">
+      <h2>Danh sách sản phẩm</h2>
+      <div class="product-grid" id="productList"></div>
+    </div>
+
+    <div id="searchSection" style="display:none">
+      <h2>Tìm kiếm sản phẩm</h2>
+      <div class="search-section">
+        <input type="text" id="searchName" placeholder="Tìm theo tên">
+        <select id="searchAsset">
+          <option value="">--Chọn loại--</option>
+          <option value="ao">Áo</option>
+          <option value="quan">Quần</option>
+        </select>
+        <button onclick="searchProduct()">Tìm</button>
+      </div>
+      <div class="product-grid" id="searchResults"></div>
+    </div>
+
+    <div id="adminSection" style="display:none">
+      <h2>Quản lý sản phẩm</h2>
+      <input type="text" id="newName" placeholder="Tên sản phẩm">
+      <input type="text" id="newImg" placeholder="URL hình ảnh">
+      <input type="number" id="newPrice" placeholder="Giá">
+      <input type="text" id="newAsset" placeholder="Loại (ao/quan)">
+      <button onclick="addProduct()">Thêm sản phẩm</button>
+    </div>
+  </div>
+
+  <script>
+    const products = [
+      { name: "Áo Thun Trắng", img: "https://via.placeholder.com/200", price: 150000, asset: "ao" },
+      { name: "Quần Jean Xanh", img: "https://via.placeholder.com/200", price: 250000, asset: "quan" },
+    ];
+
+    function renderProducts(list, containerId) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = "";
+      list.forEach(p => {
+        container.innerHTML += `
+          <div class="product-card">
+            <img src="${p.img}" alt="${p.name}">
+            <h3>${p.name}</h3>
+            <p>Giá: ${p.price.toLocaleString()} VND</p>
+          </div>`;
+      });
+    }
+
+    function showHome() {
+      document.getElementById("homeSection").style.display = "block";
+      document.getElementById("searchSection").style.display = "none";
+      document.getElementById("adminSection").style.display = "none";
+      renderProducts(products, "productList");
+    }
+
+    function showSearch() {
+      document.getElementById("homeSection").style.display = "none";
+      document.getElementById("searchSection").style.display = "block";
+      document.getElementById("adminSection").style.display = "none";
+    }
+
+    function showAdmin() {
+      document.getElementById("homeSection").style.display = "none";
+      document.getElementById("searchSection").style.display = "none";
+      document.getElementById("adminSection").style.display = "block";
+    }
+
+    function searchProduct() {
+      const name = document.getElementById("searchName").value.toLowerCase();
+      const asset = document.getElementById("searchAsset").value;
+      const results = products.filter(p => {
+        return (
+          (!name || p.name.toLowerCase().includes(name)) &&
+          (!asset || p.asset === asset)
+        );
+      });
+      renderProducts(results, "searchResults");
+    }
+
+    function addProduct() {
+      const name = document.getElementById("newName").value;
+      const img = document.getElementById("newImg").value;
+      const price = parseInt(document.getElementById("newPrice").value);
+      const asset = document.getElementById("newAsset").value;
+      if (name && img && price && asset) {
+        products.push({ name, img, price, asset });
+        alert("Thêm sản phẩm thành công!");
+        showHome();
+      } else {
+        alert("Vui lòng nhập đầy đủ thông tin.");
+      }
+    }
+
+    showHome(); // Mặc định hiển thị home khi tải trang
+  </script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+}
+
+.container h1{
+  text-align: left;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+}
+
+.container{
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 28px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.card.all-devices {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #5bc1e0, #5bc1e0);
+  border-radius: 10px;
+  padding: 20px 40px;
+  color: white;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.icon-section img {
+  width: 100px;
+  height: 100px;
+}
+
+.divider {
+  width: 1px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 0 20px;
+}
+
+.text-section h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.text-section p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.room-card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.room-card:hover {
+  transform: scale(1.03);
+}
+
+.room-card img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.room-card h3 {
+  margin: 5px 0 2px;
+}
+
+.room-card p {
+  margin: 0;
+  color: #777;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px; /* Giống như phần nội dung chính */
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  border-top: 1px solid #ddd;
+  padding: 8px 0;
+  z-index: 100;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.05);
+}
+
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #999;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.nav-item img {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 4px;
+}
+
+.nav-item.active {
+  color: #9b59b6;
+}
+
+.nav-item.active img {
+  filter: hue-rotate(270deg); /* tạo màu tím giống ảnh */
+}
+
+.room-card2 {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.room-image2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay content in center */
+.room-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255,255,255,0.9);
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  background-color: teal; /* or your preferred color */
+  border-radius: 50%;
+}
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+.header-row h1 {
+  font-size: 28px;
+  margin: 0;
+  align-items: left;
+}
+
+.dot-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 24px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: #999;
+  border-radius: 50%;
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Home Controller</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #333;
+    }
+
+    .container {
+      width: 360px;
+      margin: auto;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      background: #195fcb;
+      color: white;
+      padding: 20px;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+
+    .header h3 {
+      font-weight: 400;
+    }
+
+    .weather {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .rooms {
+      display: flex;
+      justify-content: space-around;
+      padding: 15px;
+      background: #f0f2f5;
+    }
+
+    .rooms div {
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+    }
+
+    .rooms .active {
+      color: black;
+      font-weight: bold;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    .card {
+      width: 45%;
+      background: #eee;
+      padding: 15px;
+      border-radius: 15px;
+      margin: 10px 0;
+    }
+
+    .card.red {
+      background: #fa6d63;
+      color: white;
+    }
+
+    .card.blue {
+      background: #165ebc;
+      color: white;
+    }
+
+    .card h4 {
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+
+    .card p {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .toggle {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .toggle input[type="checkbox"] {
+      width: 40px;
+      height: 20px;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-around;
+      padding: 15px;
+      border-top: 1px solid #ddd;
+      background: #fff;
+    }
+
+    .footer div {
+      width: 20px;
+      height: 20px;
+      background: #ccc;
+      border-radius: 50%;
+    }
+
+    .plus-button {
+      width: 60px;
+      height: 60px;
+      background: #1976d2;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 30px;
+      margin: -30px auto 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h3>Welcome to smart<br>home controller</h3>
+      <div class="weather">
+        <div>🌧 Raining</div>
+        <div>27°C Indoor</div>
+        <div>29°C Outdoor</div>
+      </div>
+    </div>
+
+    <div class="rooms">
+      <div class="active">Living room</div>
+      <div>Bedroom</div>
+      <div>Bathroom</div>
+      <div>Kitchen</div>
+    </div>
+
+    <div class="controls">
+      <div class="card red">
+        <h4>Light</h4>
+        <p>Super cleany</p>
+        <div class="toggle"><input type="checkbox" checked></div>
+      </div>
+      <div class="card">
+        <h4>TV</h4>
+        <p>Walton TV</p>
+        <div class="toggle"><input type="checkbox"></div>
+      </div>
+      <div class="card">
+        <h4>Air</h4>
+        <p>Super Cooler X2</p>
+        <div class="toggle"><input type="checkbox"></div>
+      </div>
+      <div class="card blue">
+        <h4>Fan</h4>
+        <p>Smart LO</p>
+        <div class="toggle"><input type="checkbox" checked></div>
+      </div>
+    </div>
+
+    <div class="plus-button">+</div>
+
+    <div class="footer">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</body>
+</html>

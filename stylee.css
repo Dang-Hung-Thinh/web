@@ -1,0 +1,107 @@
+
+            .title{
+                color: rgb(255, 252, 246);
+            }
+            .top{
+                margin:0 30%;
+                text-align: center;
+                background-color: rgb(93, 134, 141);
+                border: 2px dashed bisque;
+            }
+            span{
+                color: brown;
+            }
+            .Devices{
+                display: flex;
+                flex-wrap: wrap;
+                background-color: rgb(228, 240, 240);
+                width: 100%;
+            }
+        .dev_1{
+                flex: 49%;
+                border: 0.5px dashed bisque;
+            }
+            .dev_1 img {
+                        width: 100px; /* Đặt kích thước ảnh cố định để không chiếm quá nhiều không gian */
+                        }
+            /* The switch - the box around the slider */
+
+
+/* Compare this snippet from bai3/tyl.css: */
+/* Ẩn checkbox */
+.device-toggle {
+  display: none;
+}
+
+.device-card {
+  display: block;
+  padding: 15px;
+  text-align: center;
+  background-color: rgb(228, 240, 240);
+  border: 0.5px dashed bisque;
+  transition: 0.3s;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+/* Khi bật thiết bị */
+.device-toggle:checked + .device-card {
+  background-color: #2b5f81;
+  color: white;
+  border: 2px solid #294ab7;
+}
+
+/* Công tắc */
+.switch {
+  margin: auto;
+  margin-top: 10px;
+  width: 60px;
+  height: 34px;
+  background-color: #ccc;
+  border-radius: 34px;
+  position: relative;
+}
+
+.slider {
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+.device-toggle:checked + .device-card .switch {
+  background-color: #62c0ad;
+}
+
+.device-toggle:checked + .device-card .slider {
+  transform: translateX(26px);
+}
+
+.device-toggle:checked + .device-card i {
+  color: #ffe600;
+  text-shadow: 0 0 10px #ffe600;
+}
+.device-card::after {
+  content: "OFF";
+  display: block;
+  font-weight: bold;
+  margin-top: 5px;
+  color: gray;
+}
+
+.device-toggle:checked + .device-card::after {
+  content: "ON";
+  color: #00ffcc;
+}
+
+.device-toggle:checked + .device-card {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+}
+.device-card:hover {
+  box-shadow: 0 0 8px rgba(100, 100, 255, 0.3);
+  transform: scale(1.01);
+}

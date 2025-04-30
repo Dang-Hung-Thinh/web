@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://bernii.github.io/gauge.js/dist/gauge.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { display: flex; justify-content: center; gap: 50px; margin-top: 20px; }
+        canvas { max-width: 300px; }
+    </style>
+</head>
+<body>
+    <h1>Sensor Dashboard</h1>
+    <div class="container">
+        <canvas id="gaugeTemperature"></canvas>
+        <canvas id="gaugeWaterLevel"></canvas>
+        <canvas id="gaugeTurbidity"></canvas>
+    </div>
+    <canvas id="timeChart" width="600" height="400"></canvas>
+    
+    <script>
+        const gistUrl = "https://gist.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_GIST_ID/raw/sensor_data.json";
+        let timeLabels = [], tempData = [], waterData = [], turbidityData = [];
+        
+        async function fetchData() {
+            const response = await fetch(gistUrl);
+            const data = await response.json();
+            
+            updateGauges(data.temperature, data.water_level, data.turbidity);
+            updateChart(data.timestamp, data.temperature, data.water_level, data.turbidity);
+        }
+        
+        function updateGauges(temp, water, turbidity) {
+            temperatureGauge.setValue(temp);
+            waterLevelGauge.setValue(water);
+            turbidityGauge.setValue(turbidity);
+        }
+        
+        function updateChart(time, temp, water, turbidity) {
+            if (timeLabels.length > 10) { timeLabels.shift(); tempData.shift(); waterData.shift(); turbidityData.shift(); }
+            timeLabels.push(time);
+            tempData.push(temp);
+            waterData.push(water);
+            turbidityData.push(turbidity);
+            chart.update();
+        }
+        
+        const temperatureGauge = new Gauge(document.getElementById("gaugeTemperature")).setOptions({ max: 50, angle: -0.2, lineWidth: 0.2 });
+        const waterLevelGauge = new Gauge(document.getElementById("gaugeWaterLevel")).setOptions({ max: 100, angle: -0.2, lineWidth: 0.2 });
+        const turbidityGauge = new Gauge(document.getElementById("gaugeTurbidity")).setOptions({ max: 50, angle: -0.2, lineWidth: 0.2 });
+        
+        const ctx = document.getElementById("timeChart").getContext("2d");
+        const chart = new Chart(ctx, {
+            type: "line",
+            data: { labels: timeLabels, datasets: [{ label: "Temperature", data: tempData, borderColor: "red" },
+                                                     { label: "Water Level", data: waterData, borderColor: "blue" },
+                                                     { label: "Turbidity", data: turbidityData, borderColor: "green" }] },
+            options: { responsive: true, maintainAspectRatio: false }
+        });
+        
+        setInterval(fetchData, 5000);
+        fetchData();
+    </script>
+</body>
+</html>

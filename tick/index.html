@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flight Booking</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h2>Plan your trip</h2>
+      <div class="avatar"></div>
+    </header>
+
+    <div class="trip-form">
+      <div class="input-group">
+        <label>From</label>
+        <input type="text" value="Jakarta (CGK)" />
+      </div>
+      <div class="input-group">
+        <label>To</label>
+        <input type="text" value="Tokyo (NRT)" />
+      </div>
+      <div class="input-row">
+        <div class="input-group half">
+          <label>Departure</label>
+          <input type="text" value="Tue, 2 Apr" />
+        </div>
+        <div class="input-group half">
+          <label>Amount</label>
+          <input type="text" value="3 people" />
+        </div>
+      </div>
+      <button class="search-btn">Search flights</button>
+    </div>
+
+    <section class="saved-trips">
+      <div class="trips-header">
+        <h3>Saved trips</h3>
+        <a href="#">See more</a>
+      </div>
+      <div class="trip-card">
+        <div class="airline">Citilink</div>
+        <div class="trip-times">
+          <span>07:47</span>
+          <span>→</span>
+          <span>14:30</span>
+        </div>
+        <div class="trip-info">
+          <span>CGK (Jakarta)</span>
+          <span>7h 15m</span>
+          <span>NRT (Tokyo)</span>
+        </div>
+        <div class="trip-date">
+          <span>Date: Jan 20, 2025</span>
+        </div>
+      </div>
+    </section>
+
+    <nav class="bottom-nav">
+      <div class="nav-item active"></div>
+      <div class="nav-item"></div>
+      <div class="nav-item"></div>
+      <div class="nav-item"></div>
+    </nav>
+  </div>
+</body>
+</html>

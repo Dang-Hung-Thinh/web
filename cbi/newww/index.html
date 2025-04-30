@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Home</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    a.room-card, a.room-card2 {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="bottom-nav">
+  <a href="#" class="nav-item active">
+    <img src="https://img.icons8.com/ios-filled/24/9b59b6/home.png"/>
+    <span>My Home</span>
+  </a>
+  <a href="#" class="nav-item">
+    <img src="https://img.icons8.com/ios-filled/24/999999/cloud.png"/>
+  </a>
+  <a href="#" class="nav-item">
+    <img src="https://img.icons8.com/ios-filled/24/999999/hearts.png"/>
+  </a>
+  <a href="#" class="nav-item">
+    <img src="https://img.icons8.com/ios-filled/24/999999/appointment-reminders--v1.png"/>
+  </a>
+  <a href="#" class="nav-item">
+    <img src="https://img.icons8.com/ios-filled/24/999999/settings.png"/>
+  </a>
+</div>
+
+<div class="container">
+  <div class="header-row">
+    <h1>My Home</h1>
+    <div class="dot-menu">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <div class="card all-devices">
+    <div class="icon-section">
+      <img src="OIP.png" alt="Home">
+    </div>
+    <div class="divider"></div>
+    <div class="text-section">
+      <h2>All Devices</h2>
+      <p>45 devices</p>
+    </div>
+  </div>
+
+  <div class="room-grid">
+    <a href="room.html?room=Bedroom" class="room-card">
+      <img src="room.png" alt="">
+      <h3>Bedroom</h3>
+      <p>15 devices</p>
+    </a>
+
+    <a href="room.html?room=Livingroom" class="room-card">
+      <img src="interior-design.png" alt="">
+      <h3>Livingroom</h3>
+      <p>12 devices</p>
+    </a>
+
+    <a href="room.html?room=Bathroom" class="room-card2">
+      <img src="OIPP.jpg" alt="Bathroom" class="room-image2">
+      <div class="room-overlay">
+        <span class="room-name2">Bathroom</span>
+        <span class="status-dot"></span>
+      </div>
+    </a>
+
+    <a href="room.html?room=Kitchen" class="room-card2">
+      <img src="download.jpg" alt="Kitchen" class="room-image2">
+      <div class="room-overlay">
+        <span class="room-name2">Kitchen</span>
+        <span class="status-dot"></span>
+      </div>
+    </a>
+
+    <a href="room.html?room=Storeroom" class="room-card">
+      <img src="store.png" alt="">
+      <h3>Storeroom</h3>
+      <p>3 devices</p>
+    </a>
+
+    <a href="room.html?room=Studyroom" class="room-card">
+      <img src="study.png" alt="">
+      <h3>Studyroom</h3>
+      <p>2 devices</p>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>

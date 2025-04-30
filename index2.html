@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Self Love Glitch Animation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background: url('your-image.png') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .glitch-text {
+      font-size: 5rem;
+      font-weight: bold;
+      color: white;
+      position: absolute;
+      text-align: center;
+      animation: glitch 1s infinite;
+      mix-blend-mode: screen;
+    }
+
+    .glitch-text::before,
+    .glitch-text::after {
+      content: 'SELF LOVE';
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0.8;
+    }
+
+    .glitch-text::before {
+      color: red;
+      animation: glitchTop 1s infinite;
+    }
+
+    .glitch-text::after {
+      color: blue;
+      animation: glitchBottom 1s infinite;
+    }
+
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
+    }
+
+    @keyframes glitchTop {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, -2px); }
+      40% { transform: translate(-3px, 0); }
+      60% { transform: translate(-2px, -1px); }
+      80% { transform: translate(1px, 2px); }
+      100% { transform: translate(0); }
+    }
+
+    @keyframes glitchBottom {
+      0% { transform: translate(0); }
+      20% { transform: translate(2px, 2px); }
+      40% { transform: translate(3px, 1px); }
+      60% { transform: translate(2px, 1px); }
+      80% { transform: translate(-1px, -2px); }
+      100% { transform: translate(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="glitch-text">SELF LOVE</div>
+  </div>
+</body>
+</html>

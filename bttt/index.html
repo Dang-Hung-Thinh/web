@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Route Alert</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 360px;
+      margin: auto;
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      margin: 20px 0 10px;
+      color: #555;
+    }
+
+    .location-input {
+      display: flex;
+      align-items: center;
+      background-color: #f1f1f1;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .location-input::before {
+      content: '📍';
+      margin-right: 8px;
+    }
+
+    .time-box {
+      background-color: #111;
+      color: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .time {
+      font-size: 24px;
+      margin: 5px 0;
+    }
+
+    .days {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .day {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .day.active {
+      background-color: #1e88e5;
+      color: #fff;
+    }
+
+    .transport-options {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .option {
+      flex: 1;
+      margin: 0 5px;
+      padding: 12px;
+      text-align: center;
+      border-radius: 12px;
+      background-color: #f1f1f1;
+      font-weight: bold;
+    }
+
+    .option.active {
+      background-color: #1e88e5;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>← New route alert</h2>
+
+  <div class="section-title">Select locations</div>
+  <div class="location-input">Start</div>
+  <div class="location-input">Destination</div>
+
+  <div class="section-title">Select time & days</div>
+  <div class="time-box">
+    <div>09  04</div>
+    <div class="time">10 : 05 <span style="text-transform: uppercase;">am</span></div>
+    <div>11  06</div>
+  </div>
+
+  <div class="days">
+    <div class="day">S</div>
+    <div class="day">M</div>
+    <div class="day">T</div>
+    <div class="day active">W</div>
+    <div class="day">T</div>
+    <div class="day active">F</div>
+    <div class="day">S</div>
+  </div>
+
+  <div class="section-title">Select mode of transport</div>
+  <div class="transport-options">
+    <div class="option">Metro</div>
+    <div class="option active">Bus</div>
+    <div class="option">Cab</div>
+  </div>
+</div>
+
+</body>
+</html>

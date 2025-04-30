@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f0f4e3;
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  width: 360px;
+  background: white;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  margin: 0 0 10px;
+}
+
+header input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tabs .active {
+  background: #e1f5d9;
+}
+
+.recommend {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.recommend .item {
+  flex: 0 0 auto;
+  width: 100px;
+  height: 130px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.item.green {
+  background: #72b788;
+}
+.item.yellow {
+  background: #c5b358;
+}
+.item.pink {
+  background: #eaa4ba;
+}
+
+.will-buy h2 {
+  margin: 20px 0 10px;
+}
+
+.buy-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+footer button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.item {
+  flex-direction: column;
+  text-align: center;
+}
+
+.item .icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+  align-self: center;
+}
+
+.item .text {
+  font-weight: bold;
+  align-self: center;
+}
+
+.icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}

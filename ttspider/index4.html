@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hex Glitch Scene</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: #000;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      position: relative;
+    }
+
+    /* Background Gradient */
+    .bg-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .bg-gradient {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, #ff00ff, #00ffff, #ff6600, #ff00ff);
+      background-size: 400%;
+      animation: bgAnimation 15s ease infinite;
+      filter: blur(100px);
+      opacity: 0.4;
+    }
+
+    @keyframes bgAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Hexagon Frame */
+    .hex-frame {
+      position: absolute;
+      width: 80vmin;
+      height: 80vmin;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(0deg);
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      background: rgba(255, 140, 0, 0.1);
+      border: 4px solid rgba(255, 165, 0, 0.8);
+      box-shadow: 0 0 20px rgba(255, 140, 0, 0.6);
+      z-index: 2;
+      animation: hexPulse 6s ease-in-out infinite;
+    }
+
+    .hex-frame::before,
+    .hex-frame::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border: 4px solid rgba(255, 200, 0, 0.4);
+      clip-path: inherit;
+      animation: spinHex 12s linear infinite;
+    }
+
+    .hex-frame::after {
+      border-color: rgba(255, 100, 0, 0.5);
+      animation-direction: reverse;
+    }
+
+    @keyframes spinHex {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes hexPulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.85; }
+      50% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
+    }
+
+    /* Character Image */
+    .character-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 88%;
+      transform: translate(-50%, -50%);
+      border-radius: 20px;
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+      z-index: 3;
+    }
+
+    /* Particles */
+    .particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      animation: particleMove 10s linear infinite;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .particle:nth-child(2) { top: 20%; left: 10%; animation-delay: -2s; }
+    .particle:nth-child(3) { top: 50%; left: 80%; animation-delay: -4s; }
+    .particle:nth-child(4) { top: 70%; left: 30%; animation-delay: -6s; }
+    .particle:nth-child(5) { top: 10%; left: 60%; animation-delay: -8s; }
+
+    @keyframes particleMove {
+      0% { transform: translate(0, 0); opacity: 1; }
+      100% { transform: translate(100vw, 100vh); opacity: 0; }
+    }
+
+    /* Light Streaks */
+    .light-line {
+      position: absolute;
+      width: 200%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, rgba(255, 0, 255, 0.8), transparent);
+      animation: moveLine 4s linear infinite;
+      z-index: 1;
+      opacity: 0.3;
+    }
+
+    .light-line:nth-child(2) { top: 30%; animation-delay: 1s; }
+    .light-line:nth-child(3) { top: 60%; animation-delay: 2s; }
+
+    @keyframes moveLine {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* Optional: Text */
+    .text-container {
+      position: absolute;
+      top: 5%;
+      width: 100%;
+      text-align: center;
+      z-index: 4;
+    }
+
+    .text {
+      font-size: 3vw;
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+      animation: textFlicker 3s infinite;
+    }
+
+    @keyframes textFlicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-container">
+    <div class="bg-gradient"></div>
+  </div>
+
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <div class="light-line"></div>
+  <div class="light-line"></div>
+  <div class="light-line"></div>
+
+  <div class="hex-frame">
+    <!-- Use the uploaded image -->
+    <img src="/mnt/data/f8058aed-a41e-41c1-b186-6b59432100d3.png" alt="Character" class="character-img" />
+  </div>
+
+  <div class="text-container">
+    <div class="text">Self Love</div>
+  </div>
+</body>
+</html>

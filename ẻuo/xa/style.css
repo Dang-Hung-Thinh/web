@@ -1,0 +1,137 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #e6f2f5;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.app-container {
+  width: 320px;
+  background: white;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.tabs .active {
+  background: #ff5e5e;
+  color: white;
+}
+
+.card-info {
+  background: #b7dede;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  color: white;
+  position: relative;
+}
+
+.card-info .label {
+  font-weight: bold;
+}
+
+.card-info .card-number {
+  font-size: 0.85em;
+  margin: 6px 0;
+}
+
+.card-info .balance {
+  font-size: 1.5em;
+  margin: 12px 0;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75em;
+}
+
+.refill-btn {
+  width: 100%;
+  background: #ff5e5e;
+  border: none;
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.history-section h3 {
+  margin: 0;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.sort-btn {
+  background: #e0e0e0;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.85em;
+}
+
+.history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history-list li {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  font-size: 0.95em;
+}
+
+.bottom-menu {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 12px;
+}
+
+.bottom-menu button {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.bottom-menu .wallet {
+  background: #ff5e5e;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+}
